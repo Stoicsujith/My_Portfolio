@@ -3,19 +3,42 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Removed nav styles */
+/* Body styles */
+body {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  background-color: #000; /* black background */
+  color: #eee; /* light text color */
+  font-family: Arial, sans-serif;
+}
 
 /* To offset the fixed nav height for section anchors */
-/* You can adjust or remove this if no fixed nav exists */
 section {
   padding-top: 4.5rem;
   margin-top: 3rem;
+  color: #eee; /* make sure section text is light */
 }
 
 /* Header */
+header.parallax {
+  background: linear-gradient(135deg, #ff00d4, #00ddff);
+  color: white; /* white text on gradient */
+  padding: 120px 20px 60px;
+  margin-top: 3rem;
+  text-align: center;
+  border-radius: 8px;
+}
+
+header.parallax p {
+  color: #eee; /* subtitle in light */
+  font-weight: 600;
+}
+
 .header-content h1 {
   font-size: 3rem;
   margin-bottom: 0.25rem;
+  color: white; /* main header in white */
 }
 
 .header-contacts a {
@@ -36,6 +59,8 @@ section {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  justify-content: center;
+  color: #eee; /* light text */
 }
 
 .skills-list li {
@@ -72,12 +97,16 @@ section {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  align-items: center;
   background-color: #111;
   padding: 1rem;
   border-radius: 8px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .certificates-container img {
+  flex: 1 1 200px;
   max-width: 200px;
   height: auto;
   border-radius: 6px;
@@ -88,6 +117,31 @@ section {
 
 .certificates-container img:hover {
   transform: scale(1.05);
+}
+
+
+/* Timeline */
+#timeline ul {
+  list-style: none;
+  padding: 0;
+}
+
+#timeline li {
+  padding: 10px 0;
+  border-left: 3px solid #00ddff;
+  padding-left: 15px;
+  position: relative;
+}
+
+#timeline li::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: #00ddff;
+  position: absolute;
+  left: -6px;
+  top: 12px;
+  border-radius: 50%;
 }
 
 /* Buttons */
@@ -113,18 +167,22 @@ footer {
   background: #121212;
   margin-top: 3rem;
   padding: 1rem 0;
+  color: #aaa;
+  text-align: center;
+  border-radius: 8px;
 }
 
 /* Responsive tweaks */
 @media (max-width: 600px) {
-  /* nav styles removed */
-
   .skills-list {
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .certificates-container {
     justify-content: center;
+    flex-direction: column;
   }
 
   .card {
